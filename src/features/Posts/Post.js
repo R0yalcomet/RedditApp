@@ -2,7 +2,7 @@ import React from "react";
 
 const Post = ({ post }) => {
     return (
-        <div>
+        <div className="post">
             <p>{post.subreddit_name_prefixed}</p>
             <p>{post.author}</p>
             <h3>{post.title}</h3>

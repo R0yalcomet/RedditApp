@@ -6,7 +6,7 @@ const Posts = () => {
     const postData = mockdata.data.children;
 
     return (
-        <div>
+        <div className="posts">
             {postData.map( (post) => <Post post={post.data}/>)}
         </div>
     )

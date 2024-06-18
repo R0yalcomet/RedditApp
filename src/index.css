@@ -7,7 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  background-color: lightcoral;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.posts {
+  margin-top: 8rem;
+  overflow: scroll;
+}
+
+.post {
+  background-color: aquamarine;
+  width: 80%;
+  margin: auto;
 }
