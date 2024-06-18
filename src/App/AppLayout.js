@@ -6,7 +6,7 @@ const AppLayout = () => {
     return (
         <div>
             <header>
-                <h1>REDDIT-MINI</h1>
+                <h1>REDDIT-LITE</h1>
                 {/* <Search/> */}
             </header>
             <Outlet/>
