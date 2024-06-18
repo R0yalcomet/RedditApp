@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 header {
@@ -15,7 +16,9 @@ header {
 }
 
 .posts {
-  margin-top: 8rem;
+  position: relative;
+  top: 8rem;
+  height: 50rem;
   overflow: scroll;
 }
 
