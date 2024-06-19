@@ -1,12 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Search from "../features/Search/Search"
 
 const AppLayout = () => {
     return (
         <div>
             <header>
-                <h1>REDDIT-LITE</h1>
+                <Link to={"/"}>
+                    <h1>REDDIT-LITE</h1>
+                </Link>
                 <Search/>
             </header>
             <Outlet/>
