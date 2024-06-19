@@ -1,10 +1,10 @@
 import React from "react";
 import Post from "./Post";
 import Comments from "../Comments/Comments";
-import mockdata from "../../Util/mock";
+import { mockComments } from "../../Util/mock";
 
 const Focus = () => {
-    const postData = mockdata.data.children[0];
+    const postData = mockComments[0].data.children[0];
 
     return (
         <div>
