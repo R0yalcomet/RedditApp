@@ -27,3 +27,12 @@ header {
   width: 80%;
   margin: auto;
 }
+
+.comments {
+  overflow: scroll;
+  height: 25rem;
+}
+
+.comment {
+  background-color: darkseagreen;
+}
