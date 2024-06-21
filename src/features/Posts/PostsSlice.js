@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import assembleUrl from "../../API/reddit";
 
-const url = 'https://www.reddit.com/';
+// const url = 'https://www.reddit.com/';
 
 export const loadFeed = createAsyncThunk(
     'posts/loadFeed',
-    async () => {         
-        const response = await fetch(url + '.json');
+    async (search) => {        
+        const url = assembleUrl(search); 
+        const response = await fetch(url);
         if (!response.ok) {
             const error = await response.json()
             const message = `An error has occurred: ${response.status} ${error.message}`;
@@ -19,6 +21,7 @@ export const loadFeed = createAsyncThunk(
 export const loadPost = createAsyncThunk(
     'posts/loadPost',
     async (postLink) => {
+        const url = 'https://www.reddit.com/';
         const response = await fetch(url + postLink + '.json');
         if (!response.ok) {
             const error = await response.json()
