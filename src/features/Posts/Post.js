@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { loadPost } from "./PostsSlice";
@@ -8,10 +8,10 @@ const Post = ({ post, focus }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const handleClick = () => {
-        dispatch(loadPost(post.permalink));
-        navigate(`/${post.id}`);
-    };
+    // const handleClick = () => {
+    //     // dispatch(loadPost(post.permalink));
+    //     navigate(`/${post.id}`);
+    // };
 
     const main = () => {
         if (focus) {
@@ -24,10 +24,10 @@ const Post = ({ post, focus }) => {
             )
         } else {
             return (
-                <div onClick={handleClick}>
+                <Link to={`/${post.id}`}>
                     <h3>{post.title}</h3>
                     <img src={post.thumbnail}/>
-                </div>
+                </Link>
             )
         }
     }
