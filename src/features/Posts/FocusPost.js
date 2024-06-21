@@ -25,7 +25,7 @@ const Focus = () => {
         return (
             <div>
                 <Post focus={true} post={post[0].data.children[0].data}/>
-                <Comments />
+                <Comments comments={post[1].data.children}/>
             </div>
         )
     }

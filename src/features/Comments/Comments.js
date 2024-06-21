@@ -2,8 +2,8 @@ import React from "react";
 import Comment from "./Comment";
 import { mockComments } from "../../Util/mock";
 
-const Comments = () => {
-    const commentsData = mockComments[1].data.children;
+const Comments = ({ comments }) => {
+    // const commentsData = mockComments[1].data.children;
 
     const ListComments = (comment) => {
         if (comment.data.replies) {
@@ -23,7 +23,7 @@ const Comments = () => {
 
     return (
         <div className="comments">
-            {commentsData.map((comment) => ListComments(comment))}
+            {comments.map((comment) => ListComments(comment))}
         </div>
     )
 };
