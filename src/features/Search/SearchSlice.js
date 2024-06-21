@@ -8,19 +8,12 @@ export const loadSubreddits = createAsyncThunk(
 const searchSlice = createSlice({
     name: 'search',
     initialState: {
-        searchTerm: '',
         subredditList: [],
         searchSubreddit: '',
         loadingSubreddits: false,
         fetchSubredditsFailed: false,
     },
     reducers: {
-        setSearchTerm(state, action) {
-            state.searchTerm = action.payload;
-        },
-        clearSearchTerm(state) {
-            state.searchTerm = '';
-        },
         setSubreddit(state, action) {
             state.searchSubreddit = action.payload;
         },
@@ -48,6 +41,5 @@ const searchSlice = createSlice({
 
 export const selectSubreddits = (state) => state.search.subredditList;
 export const subreddit = (state) => state.search.searchSubreddit;
-export const searchTerm = (state) => state.search.searchTerm;
 
 export default searchSlice.reducer;
