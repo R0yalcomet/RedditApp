@@ -1,7 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import { loadPost } from "./PostsSlice";
 
 const Post = ({ post, focus }) => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const handleClick = () => {
+        dispatch(loadPost(post.permalink));
+        navigate(`/${post.id}`);
+    };
+
     const main = () => {
         if (focus) {
             return (
@@ -13,10 +24,10 @@ const Post = ({ post, focus }) => {
             )
         } else {
             return (
-                <Link to={`/${post.id}`}>
+                <div onClick={handleClick}>
                     <h3>{post.title}</h3>
                     <img src={post.thumbnail}/>
-                </Link>
+                </div>
             )
         }
     }
