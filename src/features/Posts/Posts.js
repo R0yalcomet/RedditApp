@@ -1,11 +1,8 @@
-import React from "react";
-import { mockdata } from "../../Util/mock";
-import Post from "./Post";
-
-import { useEffect } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadFeed, selectAllPosts, isLoadingFeed } from "./PostsSlice";
 
+import Post from "./Post";
+import { loadFeed, selectAllPosts, isLoadingFeed } from "./PostsSlice";
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -18,7 +15,7 @@ const Posts = () => {
 
     if (isLoading) {
         return <div>Loading...</div>
-    }
+    };
 
     return (
         <div className="posts">
