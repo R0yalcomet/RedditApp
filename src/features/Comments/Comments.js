@@ -1,12 +1,11 @@
 import React from "react";
 import Comment from "./Comment";
-import { mockComments } from "../../Util/mock";
 
 const Comments = ({ comments }) => {
-    // const commentsData = mockComments[1].data.children;
-
     const ListComments = (comment) => {
+        //iterates through replies until all comments are shown
         if (comment.data.replies) {
+            //return comment and input replies back into this function
             const replies = comment.data.replies.data.children;
             return (
                 <>
@@ -15,6 +14,7 @@ const Comments = ({ comments }) => {
                 </>
             )
         } else {
+            //return a comment with no replies
             return (
                 <Comment commentData={comment.data}/>
             ) 
