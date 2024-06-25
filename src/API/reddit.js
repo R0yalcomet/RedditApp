@@ -1,5 +1,3 @@
-
-
 const assembleUrl = (searchParams) => {
     const {searchTerm, subName} = searchParams
 
@@ -7,19 +5,22 @@ const assembleUrl = (searchParams) => {
     let end = '.json';
 
     if (!searchTerm && !subName) {
+        //unedited url to return default feed
         return (baseUrl + end);
     }
     
     if (subName) {
-        console.log(subName);
+        //edit url to return posts from chosen subreddit
         baseUrl += subName + '/';
     }
     if (searchTerm) {
+        //edit url to return posts matching a search term
         baseUrl += 'search/'
         end += '?q=' + searchTerm;
     }
 
     //Reddit json won't respond to both a subreddit filter and a search term at the same time
+    //Reddit will prioritize search term over subreddit
 
     return (baseUrl + end);
 };
