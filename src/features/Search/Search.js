@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
-
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { loadFeed } from "../Posts/PostsSlice";
 
 const Search = () => {
@@ -13,6 +12,7 @@ const Search = () => {
     };
 
     const handleSearch = (e) => {
+        //reload feed using search term
         e.preventDefault();
         dispatch(loadFeed(searchTerm));
     };
