@@ -5,8 +5,14 @@ import assembleUrl from "../../API/reddit";
 
 export const loadFeed = createAsyncThunk(
     'posts/loadFeed',
-    async (search) => {        
-        const url = assembleUrl(search); 
+    async (search, store) => {        
+        const subName = store.getState().posts.filterSubreddit;
+
+        const searchParams = {
+            searchTerm: search,
+            subName: subName
+        }
+        const url = assembleUrl(searchParams); 
         const response = await fetch(url);
         if (!response.ok) {
             const error = await response.json()
@@ -41,7 +47,13 @@ const postsSlice = createSlice({
         loadingFeed: false,
         fetchFeedFailed: false,
         loadingFocus: false,
-        fetchFocusFailed: false
+        fetchFocusFailed: false,
+        filterSubreddit: ''
+    },
+    reducers: {
+        setFilterSubreddit: (state, action) => {
+            state.filterSubreddit = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -75,5 +87,7 @@ export const isLoadingFeed = (state) => state.posts.loadingFeed;
 
 export const selectFocus = (state) => state.posts.focusState;
 export const isLoadingPost = (state) => state.posts.loadingFocus;
+
+export const { setFilterSubreddit } = postsSlice.actions
 
 export default postsSlice.reducer;

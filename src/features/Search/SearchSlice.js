@@ -19,18 +19,10 @@ const searchSlice = createSlice({
     name: 'search',
     initialState: {
         subredditList: [],
-        viewSubreddit: '',
         loadingSubreddits: false,
         fetchSubredditsFailed: false,
     },
-    reducers: {
-        setSubreddit(state, action) {
-            state.viewSubreddit = action.payload;
-        },
-        clearSubreddit(state) {
-            state.viewSubreddit = '';
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(loadSubreddits.pending, (state) => {

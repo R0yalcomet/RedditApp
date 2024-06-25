@@ -1,26 +1,18 @@
 import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectSubreddits, loadSubreddits, loadingSubreddits } from "./SearchSlice";
+import { useDispatch } from "react-redux";
+import { setFilterSubreddit, loadFeed } from "../Posts/PostsSlice";
 
-const Subreddits = () => {
+const Subreddit = ({ subName }) => {
     const dispatch = useDispatch();
-    const list = useSelector(selectSubreddits);
-    const isLoading = useSelector(loadingSubreddits);
-
-    useEffect(() => {
-        dispatch(loadSubreddits());
-    }, [dispatch]);
-
-    if (isLoading) {
-        return <div>Loading...</div>
+    
+    const handleClick = () => {
+        dispatch(setFilterSubreddit(subName));
+        dispatch(loadFeed());
     }
 
     return (
-        <ul>
-            {list.map(subName => <li>{subName}</li>)}
-        </ul>
+        <li onClick={handleClick} value={subName}>{subName}</li>
     )
-};
+}
 
-export default Subreddits;
+export default Subreddit;
