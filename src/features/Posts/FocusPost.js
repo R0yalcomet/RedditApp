@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import Post from "./Post";
 import Comments from "../Comments/Comments";
-import { mockComments } from "../../Util/mock";
-
-import { useSelector, useDispatch } from "react-redux";
 import { isLoadingPost, selectFocus, loadPost } from "./PostsSlice";
-import { useEffect } from "react";
 
-const Focus = () => {
+const Focus = () => {   //display a single post with more info and comments
     const dispatch = useDispatch();
     const post = useSelector(selectFocus);
     const isLoading = useSelector(isLoadingPost);
 
     useEffect(() => {
+        //grab pathname from window to prevent errors caused by page refresh
         const id = window.location.pathname;
         dispatch(loadPost(id));
     }, [dispatch])
