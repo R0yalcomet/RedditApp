@@ -52,6 +52,9 @@ const postsSlice = createSlice({
     reducers: {
         setFilterSubreddit: (state, action) => {
             state.filterSubreddit = action.payload;
+        },
+        clearSubredditFilter: (state) => {
+            state.filterSubreddit = '';
         }
     },
     extraReducers: (builder) => {
@@ -91,6 +94,6 @@ export const isLoadingFeed = (state) => state.posts.loadingFeed;
 export const selectFocus = (state) => state.posts.focusState;
 export const isLoadingPost = (state) => state.posts.loadingFocus;
 
-export const { setFilterSubreddit } = postsSlice.actions
+export const { setFilterSubreddit, clearSubredditFilter } = postsSlice.actions
 
 export default postsSlice.reducer;
