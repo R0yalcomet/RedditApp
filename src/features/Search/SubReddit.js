@@ -1,10 +1,19 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { setFilterSubreddit, loadFeed } from "../Posts/PostsSlice";
+import { setFilterSubreddit, loadFeed, subredditFilter } from "../Posts/PostsSlice";
 
 const Subreddit = ({ subName }) => {
     const dispatch = useDispatch();
+    const currentFilter = useSelector(subredditFilter);
+
+    const subredditClassNames = () => {
+        if (subName === currentFilter) {
+            return "filterButton active";
+        } else {
+            return "filterButton";
+        }
+    }
     
     const handleClick = () => { //reload feed with posts from chosen subreddit
         dispatch(setFilterSubreddit(subName));
@@ -16,7 +25,7 @@ const Subreddit = ({ subName }) => {
     //add option to clear subreddit filter
 
     return (
-        <li onClick={handleClick} value={subName}>{subName}</li>
+        <li className={subredditClassNames()} onClick={handleClick} value={subName}>{subName}</li>
     )
 }
 

@@ -94,6 +94,7 @@ export const isLoadingFeed = (state) => state.posts.loadingFeed;
 export const selectFocus = (state) => state.posts.focusState;
 export const isLoadingPost = (state) => state.posts.loadingFocus;
 
+export const subredditFilter = (state) => state.posts.filterSubreddit;
 export const { setFilterSubreddit, clearSubredditFilter } = postsSlice.actions
 
 export default postsSlice.reducer;
