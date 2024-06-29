@@ -8,7 +8,7 @@ const AppLayout = () => {
         <div>
             <header>
                 <Link to={"/"}>
-                    <h1>REDDIT-LITE</h1>
+                    <h1>REDDIT<div className="titleColor">-LITE</div></h1>
                 </Link>
                 <Search/>
                 <SubredditList/>

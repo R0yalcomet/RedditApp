@@ -18,7 +18,7 @@ const Search = () => {
     };
 
     return (
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch} className="search">
             <input type="text" placeholder="Search..." onChange={handleChange} value={searchTerm}/>
             <button type="submit"><img src=""/></button>
         </form>
