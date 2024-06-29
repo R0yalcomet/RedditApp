@@ -8,7 +8,7 @@ const Post = ({ post, focus }) => {
         if (focus) {
             //display more detailed post info
             return (
-                <div>
+                <div className="postMain">
                     <h3>{post.title}</h3>
                     <h4>{post.selftext}</h4>
                     <img src={post.thumbnail}/>
@@ -17,7 +17,7 @@ const Post = ({ post, focus }) => {
         } else {
             //display basic post info and link to focus post view
             return (
-                <Link to={`/${post.id}`}>
+                <Link className="postMain" to={`/${post.id}`}>
                     <h3>{post.title}</h3>
                     <img src={post.thumbnail}/>
                 </Link>
@@ -27,11 +27,15 @@ const Post = ({ post, focus }) => {
 
     return (
         <div className="post">
-            <p>{post.subreddit_name_prefixed}</p>
-            <p>{post.author}</p>
+            <div className="postTopWidgets">
+                <p className="postSub">Posted in: <b>{post.subreddit_name_prefixed}</b></p>
+                <p className="postAuthor">by: <b>{post.author}</b></p>   
+            </div>
             {main()}
-            <p>{post.ups}</p>
-            <p>{post.num_comments}</p>
+            <div className="postBottomWidgets">
+                <p className="postUpvotes">{post.ups}</p>
+                <p className="postComments">{post.num_comments}</p>
+            </div>
         </div>
     )
 };

@@ -1,3 +1,12 @@
+/* 
+  Contents:
+  1. General styles
+  2. Header styles
+  3. Posts styles
+  4. Comments styles
+*/
+
+/* 1. General styles */
 body {
   margin: 0;
   margin-top: 10rem;
@@ -10,6 +19,7 @@ body {
   background-color: rgb(19, 19, 19);
 }
 
+/* 2. Header styles */
 header {
   background-color:rgb(53, 53, 53);
   position: absolute;
@@ -30,6 +40,7 @@ header h1 {
   color: rgb(255, 255, 255);
 }
 
+/* 2.1. Search styles */
 .search {
   display: inline-block;
   position: absolute;
@@ -56,36 +67,14 @@ header h1 {
 }
 
 .search button:hover {
-  background-color: rgb(185, 100, 100);
+  background-color: rgb(204, 87, 87);
 }
 
 .search button:active {
   background-color: red;
 }
 
-.posts {
-  position: relative;
-  height: 50rem;
-  overflow: scroll;
-}
-
-.post {
-  background-color: rgb(170, 170, 170);
-  width: 80%;
-  margin: 1rem auto;
-  border-radius: 2rem;
-  padding: .01rem .5rem;
-}
-
-.comments {
-  overflow: scroll;
-  height: 25rem;
-}
-
-.comment {
-  background-color: darkseagreen;
-}
-
+/* 2.2. Filter styles */
 .subreddits {
   display: flex;
   justify-content: space-evenly;
@@ -96,7 +85,6 @@ header h1 {
 }
 
 .filterButton {
-  /* display: inline; */
   background-color: rgb(170, 170, 170);
   margin: 0;
   padding: .5rem 1rem;
@@ -104,6 +92,93 @@ header h1 {
   font-weight: 700;
 }
 
+.filterButton:hover {
+  background-color: rgb(204, 87, 87);
+}
+
 .active {
   background-color: red;
+}
+
+/* 3. Posts styles */
+.posts {
+  position: relative;
+  height: 50rem;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.post {
+  background-color: rgb(170, 170, 170);
+  width: auto;
+  min-width: 40%;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  /* padding: .01rem .75rem; */
+  box-sizing: border-box;
+}
+
+.postMain {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
+  text-decoration: none;
+}
+
+.post h3 {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  max-width: 50%;
+}
+
+.post img {
+  display: inline-block;
+}
+
+.postTopWidgets {
+  background-color: red;
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+.postAuthor,
+.postSub {
+  display: inline-block;
+  font-size: 1.125rem;
+  margin: .5rem 0;
+}
+
+.postSub {
+  margin-right: 3rem;
+}
+
+.postBottomWidgets {
+  background-color: rgb(53, 53, 53);
+  border-radius: 0 0 2rem 2rem;
+  padding-left: 1rem;
+}
+
+.postUpvotes,
+.postComments {
+  display: inline-block;
+  color: white;
+}
+
+.postUpvotes {
+  margin-right: 5rem;
+}
+
+/* 4. Comments styles */
+.comments {
+  overflow: scroll;
+  height: 25rem;
+}
+
+.comment {
+  background-color: darkseagreen;
 }
