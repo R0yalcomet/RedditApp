@@ -42,9 +42,10 @@ header h1 {
 
 /* 2.1. Search styles */
 .search {
-  display: inline-block;
+  display: flex;
   position: absolute;
   right: 0;
+  top: 0;
   margin: 1.5rem 2.5rem;
   height: 2.5rem;
 }
@@ -58,12 +59,15 @@ header h1 {
 }
 
 .search button {
-  padding: .8rem;
   height: 100%;
   width: 2rem;
   border: none;
   border-radius: 0 2rem 2rem 0;
   background-color: rgb(170, 170, 170);
+  background-image: url("../public/searchIcon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .search button:hover {
