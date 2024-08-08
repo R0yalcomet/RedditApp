@@ -14,7 +14,7 @@ const Post = ({ post, focus }) => {
                 <div className="postMain">
                     <h3>{post.title}</h3>
                     <h4>{post.selftext}</h4>
-                    <img src={post.thumbnail}/>
+                    {post.post_hint === "image" ? <img src={post.thumbnail}/> : null}
                 </div>
             )
         } else {
@@ -22,7 +22,7 @@ const Post = ({ post, focus }) => {
             return (
                 <Link className="postMain" to={`/${post.id}`}>
                     <h3>{post.title}</h3>
-                    <img src={post.thumbnail}/>
+                    {post.post_hint === "image" ? <img src={post.url}/> : null}
                 </Link>
             )
         }

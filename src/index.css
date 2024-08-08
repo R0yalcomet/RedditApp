@@ -120,8 +120,13 @@ header h1 {
   box-sizing: border-box;
 }
 
+.post p {
+  margin: .25rem .5rem;
+}
+
 .postMain {
   display: flex;
+  margin: .5rem;
   /* flex-direction: row; */
   justify-content: space-evenly;
   text-decoration: none;
@@ -130,12 +135,18 @@ header h1 {
 .post h3 {
   color: black;
   text-decoration: none;
+  text-wrap: balance;
+  text-align: center;
   display: inline-block;
-  max-width: 50%;
+  max-width: 45%;
+  margin: auto 0;
 }
 
 .post img {
   display: inline-block;
+  max-width: 45%;
+  max-height: 20rem;
+  margin: auto 0;
 }
 
 .postTopWidgets {
