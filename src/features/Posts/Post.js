@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 const Post = ({ post, focus }) => {
 
+    const epoch = new Date(post.created_utc * 1000);
+    const created = epoch.toLocaleString()
+
     const main = () => {
         //main component changes how the post is displayed depending on whether it is in focus or in the feed list
         if (focus) {
@@ -30,11 +33,12 @@ const Post = ({ post, focus }) => {
             <div className="postTopWidgets">
                 <p className="postSub">Posted in: <b>{post.subreddit_name_prefixed}</b></p>
                 <p className="postAuthor">by: <b>{post.author}</b></p>   
+                <p>{created}</p>
             </div>
             {main()}
             <div className="postBottomWidgets">
-                <p className="postUpvotes">{post.ups}</p>
-                <p className="postComments">{post.num_comments}</p>
+                <p className="postUpvotes">Upvotes: <b>{post.ups}</b></p>
+                <p className="postComments">Comments: <b>{post.num_comments}</b></p>
             </div>
         </div>
     )
