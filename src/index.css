@@ -112,6 +112,13 @@ header h1 {
 }
 
 /* 3. Posts styles */
+#loading {
+  text-align: center;
+  margin: auto;
+  color: rgb(170, 170, 170);
+  font-size: 5rem;
+}
+
 .posts {
   position: relative;
   height: 50rem;
@@ -169,7 +176,8 @@ header h1 {
 }
 
 .postAuthor,
-.postSub {
+.postSub,
+.postAge {
   display: inline-block;
   font-size: 1.125rem;
   margin: .5rem 0;

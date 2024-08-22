@@ -4,7 +4,25 @@ import { Link } from "react-router-dom";
 const Post = ({ post, focus }) => {
 
     const epoch = new Date(post.created_utc * 1000);
-    const created = epoch.toLocaleString()
+    let created = (new Date() - epoch)/(1000*60);
+    let postAge;
+    if (created < 60) {
+        postAge = `${Math.round(created)}min`;
+    } else {
+        created = created/60;
+        if (created < 24) {
+            postAge = `${Math.round(created)}h`;
+        } else {
+            created = created/24;
+            if (created < 30) {
+                postAge = `${Math.round(created)}d`;
+            } else if (created < 365) {
+                postAge = `${Math.round(created/30)}mo`
+            } else {
+                postAge = `${Math.round(created/365)}y`
+            }
+        }
+    }
 
     const main = () => {
         //main component changes how the post is displayed depending on whether it is in focus or in the feed list
@@ -33,7 +51,7 @@ const Post = ({ post, focus }) => {
             <div className="postTopWidgets">
                 <p className="postSub">Posted in: <b>{post.subreddit_name_prefixed}</b></p>
                 <p className="postAuthor">by: <b>{post.author}</b></p>   
-                <p>{created}</p>
+                <p className="postAge">{postAge}</p>
             </div>
             {main()}
             <div className="postBottomWidgets">
