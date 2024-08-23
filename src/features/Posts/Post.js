@@ -50,7 +50,7 @@ const Post = ({ post, focus }) => {
         <div className="post">
             <div className="postTopWidgets">
                 <p className="postSub">Posted in: <b>{post.subreddit_name_prefixed}</b></p>
-                <p className="postAuthor">by: <b>{post.author}</b></p>   
+                <p className="postAuthor">by: <b>u/{post.author}</b></p>   
                 <p className="postAge">{postAge}</p>
             </div>
             {main()}

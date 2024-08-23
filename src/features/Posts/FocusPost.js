@@ -22,7 +22,7 @@ const Focus = () => {   //display a single post with more info and comments
 
     if (post[0]) {
         return (
-            <div>
+            <div id="focus">
                 <Post focus={true} post={post[0].data.children[0].data}/>
                 <Comments comments={post[1].data.children}/>
             </div>
