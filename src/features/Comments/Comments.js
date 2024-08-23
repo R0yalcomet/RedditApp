@@ -9,14 +9,14 @@ const Comments = ({ comments }) => {
             const replies = comment.data.replies.data.children;
             return (
                 <>
-                    <Comment commentData={comment.data}/>
+                    {!comment.data.body ? null : <Comment key={comment.data.id} commentData={comment.data}/>}
                     {replies.map(reply => ListComments(reply))}
                 </>
             )
         } else {
             //return a comment with no replies
             return (
-                <Comment commentData={comment.data}/>
+                !comment.data.body ? null : <Comment key={comment.data.id} commentData={comment.data}/>
             ) 
         }
     };
