@@ -34,8 +34,8 @@ const SubredditList = () => {
 
     return (
         <ul className="subreddits">
-            <li className={clearButtonClassNames()} onClick={handleClear}>All</li>
-            {list.map(subName => <Subreddit subName={subName}/>)}
+            <li key="default" className={clearButtonClassNames()} onClick={handleClear}>All</li>
+            {list.map((subName, index) => <Subreddit key={index} subName={subName}/>)}
         </ul>
     )
 };
