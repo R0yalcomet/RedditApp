@@ -31,7 +31,7 @@ const Post = ({ post, focus }) => {
             return (
                 <div className="postMain">
                     <h3>{post.title}</h3>
-                    <h4>{post.selftext}</h4>
+                    {post.selftext ? <h4>{post.selftext}</h4> : null}
                     {post.post_hint === "image" ? <img src={post.thumbnail}/> : null}
                 </div>
             )
