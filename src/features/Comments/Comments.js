@@ -5,10 +5,10 @@ const Comments = ({ comments }) => {
     const ListComments = (comment) => {
         //recursively check for and display comments/replies
         return (
-            <>
-                {!comment.data.body ? null : <Comment key={comment.data.id} commentData={comment.data}/>}
+            <div key={comment.data.id}>
+                {!comment.data.body ? null : <Comment commentData={comment.data}/>}
                 {!comment.data.replies ? null : comment.data.replies.data.children.map(reply => ListComments(reply))}
-            </>
+            </div>
         )
     };
 
