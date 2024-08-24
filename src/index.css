@@ -112,7 +112,7 @@ header h1 {
 }
 
 /* 3. Posts styles */
-#loading {
+.loading {
   text-align: center;
   margin: auto;
   color: rgb(170, 170, 170);

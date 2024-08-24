@@ -17,7 +17,7 @@ const Focus = () => {   //display a single post with more info and comments
     }, [dispatch])
 
     if (isLoading) {
-        return <div>Loading...</div>
+        return <div className="loading">Loading...</div>
     }
 
     if (post[0]) {

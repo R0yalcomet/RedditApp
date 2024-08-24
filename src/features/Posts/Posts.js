@@ -14,7 +14,7 @@ const Posts = () => {
     }, [dispatch]);
 
     if (isLoading) {
-        return <div id="loading">Loading...</div>
+        return <div className="loading">Loading...</div>
     };
 
     return (
