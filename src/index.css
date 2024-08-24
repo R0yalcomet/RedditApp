@@ -152,7 +152,7 @@ header h1 {
   text-decoration: none;
 }
 
-.post h3 {
+#previewMain h3 {
   color: black;
   text-decoration: none;
   text-wrap: balance;
@@ -162,11 +162,30 @@ header h1 {
   margin: auto 0;
 }
 
-.post img {
+#previewMain img {
   display: inline-block;
-  max-width: 45%;
-  max-height: 20rem;
+  max-width: 30vw;
+  max-height: 30vh;
   margin: auto 0;
+}
+
+#imgContainer {
+  max-width: 100%;
+  max-height: 60vh;
+  text-align: center;
+  padding: 0;
+}
+
+#focusMain img {
+  max-width: 60vw;
+  max-height: 60vh;
+  margin: auto;
+}
+
+#focusMain {
+  display: block;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .postTopWidgets {
@@ -214,27 +233,32 @@ header h1 {
   overflow-x: hidden;
 }
 
+#focus .post {
+  max-width: 70vw;
+}
+
 /* 4. Comments styles */
 .comments {
-  width: 90vw;
+  max-width: 65vw;
   height: 25rem;
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: end;
+
 }
 
 .comment {
   box-sizing: border-box;
   background-color: rgb(170, 170, 170);
   width: 100%;
-  padding: 0 1rem;
+  padding: .01rem 1rem;
   border-radius: 1rem;
   margin-top: .5rem;
 }
 
 .comment p {
   margin: .5rem;
+  text-wrap: pretty;
 }
 
 .comAuthor {
