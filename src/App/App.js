@@ -6,7 +6,7 @@ import Focus from "../features/Posts/FocusPost";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<AppLayout/>}>
           <Route path="" element={<Posts focus={false}/>}/>
