@@ -12,7 +12,7 @@ const Focus = () => {   //display a single post with more info and comments
 
     useEffect(() => {
         //grab pathname from window to prevent errors caused by page refresh
-        const id = window.location.pathname;
+        const id = window.location.hash.slice(2);
         dispatch(loadPost(id));
     }, [dispatch])
 
