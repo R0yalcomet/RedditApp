@@ -31,7 +31,7 @@ const Post = ({ post, focus }) => {
             return (
                 <div id="focusMain" className="postMain">
                     <h3>{post.title}</h3>
-                    <div id="imgContainer">{post.post_hint === "image" ? <img src={post.url}/> : null}</div>
+                    <div id="imgContainer">{post.post_hint === "image" ? <img alt="" src={post.url}/> : null}</div>
                     {post.selftext ? <h4>{post.selftext}</h4> : null}
                 </div>
             )
@@ -40,7 +40,7 @@ const Post = ({ post, focus }) => {
             return (
                 <Link id="previewMain" className="postMain" to={`/${post.id}`}>
                     <h3>{post.title}</h3>
-                    {post.post_hint === "image" ? <img src={post.url}/> : null}
+                    {post.post_hint === "image" ? <img alt="" src={post.url}/> : null}
                 </Link>
             )
         }

@@ -1,19 +1,19 @@
 import React from "react";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import Posts from "../features/Posts/Posts";
 import Focus from "../features/Posts/FocusPost";
 
 const App = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<AppLayout/>}>
           <Route path="" element={<Posts focus={false}/>}/>
           <Route path="/:postId" element={<Focus/>}/>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 };
 
