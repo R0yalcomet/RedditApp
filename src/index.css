@@ -9,7 +9,7 @@
 /* 1. General styles */
 body {
   margin: 0;
-  margin-top: 9.5rem;
+  margin-top: 9rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -28,7 +28,7 @@ header {
 }
 
 header h1 {
-  color: rgb(204, 87, 87);
+  color: rgb(255, 0, 0);
   text-decoration: none;
   display: inline-block;
   margin: .25rem 2.5rem 0;
@@ -71,11 +71,11 @@ header h1 {
 }
 
 .search button:hover {
-  background-color: rgb(192, 122, 122);
+  background-color: rgb(204, 87, 87);
 }
 
 .search button:active {
-  background-color: rgb(204, 87, 87);
+  background-color: red;
 }
 
 /* 2.2. Filter styles */
@@ -84,11 +84,11 @@ header h1 {
   justify-content: space-evenly;
   list-style: none;
   width: auto;
-  padding: 0.5rem 0;
-  margin: .5rem .25rem .25rem;
+  padding: 0;
+  margin: 1rem .25rem .25rem;
   overflow-x: scroll;
   scrollbar-width: auto;
-  scrollbar-color: rgb(204, 87, 87) rgb(53, 53, 53);
+  scrollbar-color: red rgb(53, 53, 53);
 }
 
 .subreddits li {
@@ -104,11 +104,11 @@ header h1 {
 }
 
 .filterButton:hover {
-  background-color: rgb(192, 122, 122);
+  background-color: rgb(204, 87, 87);
 }
 
 .active {
-  background-color: rgb(204, 87, 87);
+  background-color: red;
 }
 
 /* 3. Posts styles */
@@ -121,14 +121,13 @@ header h1 {
 
 .posts {
   position: relative;
-  height: 80vh;
-  width: 100vw;
+  height: 85vh;
+  width: 95vw;
   margin: auto;
-  padding-bottom: 2rem;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  scrollbar-color: rgb(204, 87, 87) rgb(19, 19, 19);
+  scrollbar-color: red rgb(19, 19, 19);
 }
 
 .post {
@@ -227,12 +226,11 @@ header h1 {
 
 #focus {
   width: 100vw;
-  height: 80vh;
+  height: 85vh;
   margin: auto;
-  padding-bottom: 2rem;
+  box-sizing: border-box;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: rgb(204, 87, 87) rgb(19, 19, 19);
 }
 
 #focus .post {
@@ -242,9 +240,11 @@ header h1 {
 /* 4. Comments styles */
 .comments {
   max-width: 65vw;
+  height: 25rem;
   margin: auto;
   display: flex;
   flex-direction: column;
+
 }
 
 .comment {
@@ -253,7 +253,7 @@ header h1 {
   width: 100%;
   padding: .01rem 1rem;
   border-radius: 1rem;
-  margin: .5rem;
+  margin-top: .5rem;
 }
 
 .comment p {
