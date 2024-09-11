@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<AppLayout/>}>
           <Route path="" element={<Posts focus={false}/>}/>
-          <Route path="/:postId" element={<Focus/>}/>
+          <Route path="/r/:postSub/comments/:postId" element={<Focus/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
